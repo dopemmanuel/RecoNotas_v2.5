@@ -87,8 +87,11 @@ EDIT:
 
 - En la 2.3 Se el corrigieron varios errores y comenzo a funcionar, pero su opcion(comando) no estaba en la guia u existia un boton para ello.
 
--En la 2.5 que es la version actual se inplemento el comando en ayuda y el boton del mismo para que actives el 2FA por ahora sin errores. 
+- En la 2.5 que es la version actual se inplemento el comando en ayuda y el boton del mismo para que actives el 2FA por ahora sin errores. 
 
 ---
 
 # FINOO
+
+
+[ Volver ↩](../RecoNotas_v2.5-1/ReadMe.md)

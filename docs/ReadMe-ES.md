@@ -123,6 +123,6 @@ ENCRYPTION_MASTER_PASSWORD - la contraseña que quieras
 **🔑 Autenticación en Dos Factores: Configuración mediante el comando /setup2fa.**
 
 
-[Click aqui para ver las preguntas](https://github.com/dopemmanuel/RecoNotas/blob/main/preguntas.md)
+[Click aqui para ver las preguntas](../preguntas.md)
 
 [ Volver ↩](../ReadMe.md)

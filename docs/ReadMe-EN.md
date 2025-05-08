@@ -121,6 +121,6 @@ ENCRYPTION_MASTER_PASSWORD - Must be a strong password
 
 **🔑 Two-Factor Authentication: Setup via /setup2fa.**
 
-[Click here to see FAQs](https://github.com/dopemmanuel/RecoNotas/blob/main/preguntas.md)
+[Click here to see FAQs](../Questions_&_Answers.md)
 
 [ Back ↩](../ReadMe.md)
