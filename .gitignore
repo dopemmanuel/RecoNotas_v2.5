@@ -1,3 +1,4 @@
+.env
 auditoria.log
 bot.log
 secure_reconotas.db
