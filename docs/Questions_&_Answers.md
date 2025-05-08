@@ -94,4 +94,4 @@ I could use AI for recommendations or IoT to remind users of tasks related to sm
 
 # THAAAT'S ALL FOLKS 🎉
 
-[ Back ↩](../RecoNotas_v2.5-1/ReadMe.md)
+[ Back ↩](../ReadMe.md)
