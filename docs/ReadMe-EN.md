@@ -123,4 +123,4 @@ ENCRYPTION_MASTER_PASSWORD - Must be a strong password
 
 [Click here to see FAQs](https://github.com/dopemmanuel/RecoNotas/blob/main/preguntas.md)
 
-[Back](RecoNotas_v2.5\ReadMe.md)
+[ Back ↩](../ReadMe.md)

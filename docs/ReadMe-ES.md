@@ -124,3 +124,5 @@ ENCRYPTION_MASTER_PASSWORD - la contraseña que quieras
 
 
 [Click aqui para ver las preguntas](https://github.com/dopemmanuel/RecoNotas/blob/main/preguntas.md)
+
+[ Volver ↩](../ReadMe.md)

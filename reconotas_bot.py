@@ -486,15 +486,15 @@ class RecoNotasBot:
             try:
                 user_id = message.from_user.id
                 _ = self._get_user_translation(user_id)
-                
+
                 cursor = self.db.conn.cursor()
                 cursor.execute("SELECT id FROM usuarios WHERE telegram_id = ?", (user_id,))
                 db_user_id = cursor.fetchone()[0]
-                
+
                 # Obtener el secreto cifrado de la base de datos
                 cursor.execute("SELECT secret FROM auth_2fa WHERE usuario_id = ?", (db_user_id,))
                 result = cursor.fetchone()
-                
+
                 if not result:
                     self.bot.reply_to(
                         message,
@@ -502,16 +502,16 @@ class RecoNotasBot:
                         reply_markup=self._get_main_menu()
                     )
                     return
-                    
+
                 # Descifrar el secreto
                 encrypted_secret = result[0]
                 secret = self.cifrado.descifrar(encrypted_secret.encode('utf-8'))
-                
+
                 # Generar código actual
                 totp = pyotp.TOTP(secret)
                 current_code = totp.now()
                 remaining_time = totp.interval - datetime.now().timestamp() % totp.interval
-                
+
                 # Mensaje con formato
                 msg = _(
                     "🍏 *Código 2FA Actual* (Prueba)\n\n"
@@ -520,28 +520,28 @@ class RecoNotasBot:
                     "⚠️ Este código cambia cada 30 segundos\n"
                     "🔒 Usa este comando solo para pruebas"
                 ).format(code=current_code, time=int(remaining_time))
-                
+
                 # Enviar con autodestrucción después de 30 segundos
                 sent_msg = self.bot.reply_to(
                     message,
                     msg,
                     parse_mode="Markdown"
                 )
-                
+
                 # Eliminar el mensaje después de 30 segundos (tiempo de vida del código)
                 Timer(30.0, lambda: self.bot.delete_message(
                     message.chat.id, 
                     sent_msg.message_id
                 )).start()
-                
+
                 # Registrar en auditoría
                 self.db.registrar_auditoria(
                     db_user_id,
                     "2FA_TEST_CODE_REQUESTED",
                     {"ip": "Telegram", "user_agent": "Telegram"}
                 )
-                
-            except Exception as e:
+
+            except Exception as e: # pylint: disable=broad-except
                 self.config.logger.error(f"Error en show_2fa_test_code: {str(e)}")
                 self.bot.reply_to(
                     message,
@@ -1298,6 +1298,7 @@ class RecoNotasBot:
             sys.exit(1)
 
         self.config.logger.info("Iniciando RecoNotas Secure v2.5")
+
 # ------------------------- EJECUCIÓN -------------------------
 if __name__ == "__main__":
     try:

@@ -1,3 +1,6 @@
+"""
+Inports que permiten que el bot funcione correctmente
+"""
 import os
 import sys
 import gettext
