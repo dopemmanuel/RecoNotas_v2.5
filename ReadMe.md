@@ -2,5 +2,5 @@
 
 📘 Elige el idioma/Choose your Languaje:
 
-- [🇪🇸 English ](docs/ReadMe-ES.md)
-- [🇺🇸 Español ](docs/ReadMe-EN.md)
+- [🇪🇸 English ](docs/ReadMe-EN.md)
+- [🇺🇸 Español ](docs/ReadMe-ES.md)
