@@ -94,4 +94,6 @@ EDIT:
 # FINOO
 
 
+[Click aqui para ver las preguntas de la u3 ](../docs/preguntas_u3.md)
+
 [ Volver ↩](../ReadMe.md)

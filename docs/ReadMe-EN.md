@@ -121,6 +121,8 @@ ENCRYPTION_MASTER_PASSWORD - Must be a strong password
 
 **🔑 Two-Factor Authentication: Setup via /setup2fa.**
 
-[Click here to see FAQs](../docs/Questions_&_Answers.md)
+[Click here to see FAQs u2](../docs/Q_&_A_u2.md)
+
+[Click here to see FAQs u3](../docs/Q_&_A_u3.md)
 
 [ Back ↩](../ReadMe.md)
