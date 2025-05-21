@@ -24,9 +24,9 @@ class RecoNotasBot:
     """
     def __init__(self, config: Config):
         self.config = config
-        self.bot = telebot.TeleBot(config.api_token)
+        self.bot = telebot.TeleBot(config.api_token) # type: ignore
         self.db = SecureDB.get_instance()
-        self.cifrado = CifradoManager(config.salt, config.clave_maestra)
+        self.cifrado = CifradoManager(config.salt, config.clave_maestra) # type: ignore
         self.active_reminders = {}
         self._load_translations()
         self._setup_handlers()
@@ -40,7 +40,7 @@ class RecoNotasBot:
                 user = message.from_user
                 user_id = user.id
 
-                cursor = self.db.conn.cursor()
+                cursor = self.db.conn.cursor() # type: ignore
                 cursor.execute(
                     "INSERT OR IGNORE INTO usuarios (telegram_id, lenguaje) VALUES (?, ?)",
                     (user_id, self.config.default_lang)
@@ -1122,3 +1122,4 @@ class RecoNotasBot:
             sys.exit(1)
 
         self.config.logger.info("Iniciando RecoNotas Secure v2.5")
+
