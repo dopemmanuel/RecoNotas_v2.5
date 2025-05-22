@@ -112,6 +112,8 @@ ENCRYPTION_MASTER_PASSWORD - Must be a strong password
 
 [Bot's Link](https://t.me/RecoNotas_bot)
 
+[QR](images/QR.png)
+
 
 ## 🔒 Security & Compliance
 
