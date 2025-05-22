@@ -1,0 +1,99 @@
+# Contribution Guidelines for RecoNotas_v2.5
+
+## 🚀 Getting Started
+
+1. **Fork the repository**
+2. **Clone your fork**:
+
+   ```bash
+   git clone https://github.com/dopemmanuel/RecoNotas_v2.5.git
+
+# 💡 Areas Needing Contribution
+- High-Priority
+- Security Audits: Penetration testing for encryption systems
+
+- Multi-Language Support: Translation of UI strings (.po files)
+
+- API Expansion: Webhook integrations with enterprise tools (Slack, Teams)
+
+
+| Feature                | Difficulty | Tech Stack            |
+| ---------------------- | ---------- | --------------------- |
+| Voice Notes Encryption | Medium     | PyAudio, FFmpeg       |
+| Biometric 2FA          | Hard       | Android/iOS SDKs      |
+| GDPR Compliance Tools  | Medium     | Python-DataProtection |
+
+
+# 🛡️ Security Practices
+- Never hardcode credentials (use .env)
+
+- All cryptographic operations must:
+
+- Use the project's CifradoManager
+
+- Include cleanup with secure_clean()
+
+- SQL queries must be parameterized
+
+# 🔍 Pull Request Process
+- Create a draft PR early for feedback
+
+- Include:
+
+    Tests: Unit tests (pytest) for new features
+
+    Docs: Updated README/wiki entries
+
+- Screenshots: For UI changes (if applicable)
+
+- Pass all checks:
+
+```bash
+pytest --cov=./ --cov-report=xml
+bandit -r ./  # Security linting
+```
+
+
+# 🧪 Testing Guide
+*** Test Cases Required For: *** 
+| Feature         | Test File           | Coverage Target |
+| --------------- | ------------------- | --------------- |
+| 2FA Auth        | `test_auth.py`      | 95%             |
+| Note Encryption | `test_crypto.py`    | 100%            |
+| Reminder System | `test_reminders.py` | 90%             |
+
+
+Example test:
+
+```python
+def test_note_encryption():
+    test_content = "SECRET123"
+    encrypted = cifrado.cifrar(test_content)
+    assert test_content in cifrado.descifrar(encrypted).decode()
+```
+# 🚨 Security Vulnerability Reporting
+
+### Found a bug? `Do not open an issue` — email eolm728@g.educaand.es with:
+
+- Description
+
+- Steps to reproduce
+
+- Impact assessment
+
+- Suggested fix (if any)
+
+We follow Responsible Disclosure and credit all valid reports.
+
+# 🌍 Internationalization
+### To add a new language:
+
+- Duplicate: locales/en/LC_MESSAGES/reconotas.po
+
+- Translate strings using Poedit
+
+* Compile to .mo:
+
+```bash 
+msgfmt reconotas.po -o reconotas.mo
+```
